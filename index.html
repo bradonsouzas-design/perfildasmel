@@ -1,3 +1,435 @@
-<script>
-   window.location.replace("https://reemisaodas.com/?id=1");
-</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Express Store</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f5f5f5;
+  color:#222;
+}
+
+/* HEADER */
+
+header{
+  background:white;
+  padding:15px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color:#ff4d4d;
+}
+
+.search-box{
+  flex:1;
+  margin:0 40px;
+}
+
+.search-box input{
+  width:100%;
+  padding:14px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  outline:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:#333;
+  margin-left:20px;
+  font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+  background:linear-gradient(120deg,#ff5757,#ff914d);
+  min-height:450px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:60px 5%;
+  color:white;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  max-width:550px;
+}
+
+.hero h1{
+  font-size:55px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:20px;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 35px;
+  background:white;
+  color:#ff5757;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+.hero img{
+  width:420px;
+  max-width:100%;
+}
+
+/* CATEGORIAS */
+
+.section{
+  padding:70px 5%;
+}
+
+.section-title{
+  font-size:35px;
+  margin-bottom:35px;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.category{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+  transition:.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.category:hover{
+  transform:translateY(-5px);
+}
+
+.category img{
+  width:80px;
+  margin-bottom:15px;
+}
+
+/* PRODUTOS */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.product-card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+  transition:.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-8px);
+}
+
+.product-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.product-info{
+  padding:20px;
+}
+
+.product-info h3{
+  margin-bottom:10px;
+}
+
+.price{
+  color:#ff5757;
+  font-size:24px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:80px 5%;
+}
+
+.newsletter h2{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.newsletter input{
+  padding:15px;
+  width:320px;
+  max-width:100%;
+  border:none;
+  border-radius:8px;
+  margin-top:20px;
+}
+
+.newsletter button{
+  padding:15px 25px;
+  border:none;
+  border-radius:8px;
+  background:#ff5757;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  margin-left:10px;
+}
+
+/* FOOTER */
+
+footer{
+  background:white;
+  padding:40px;
+  text-align:center;
+  color:#777;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .search-box{
+    margin:0;
+    width:100%;
+  }
+
+  .hero{
+    text-align:center;
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    EXPRESS STORE
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Buscar produtos...">
+  </div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Categorias</a>
+    <a href="#">Promoções</a>
+    <a href="#">Contato</a>
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-text">
+
+    <h1>
+      PRODUTIVIDADE COM ESTILO
+    </h1>
+
+    <p>
+      Os melhores produtos escolares, escritório e organização
+      pra quem quer parar de viver no caos.
+    </p>
+
+    <a href="#" class="btn">
+      VER OFERTAS
+    </a>
+
+  </div>
+
+  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">
+    Categorias
+  </h2>
+
+  <div class="categories">
+
+    <div class="category">
+      <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png">
+      <h3>Cadernos</h3>
+    </div>
+
+    <div class="category">
+      <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png">
+      <h3>Canetas</h3>
+    </div>
+
+    <div class="category">
+      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+      <h3>Mochilas</h3>
+    </div>
+
+    <div class="category">
+      <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
+      <h3>Organização</h3>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">
+    Produtos em Destaque
+  </h2>
+
+  <div class="products">
+
+    <div class="product-card">
+
+      <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=800&auto=format&fit=crop">
+
+      <div class="product-info">
+
+        <h3>Caderno Premium</h3>
+
+        <div class="price">
+          R$ 49,90
+        </div>
+
+        <a href="#" class="btn">
+          Comprar
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="product-card">
+
+      <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop">
+
+      <div class="product-info">
+
+        <h3>Kit Escritório</h3>
+
+        <div class="price">
+          R$ 89,90
+        </div>
+
+        <a href="#" class="btn">
+          Comprar
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="product-card">
+
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop">
+
+      <div class="product-info">
+
+        <h3>Mochila Urban</h3>
+
+        <div class="price">
+          R$ 129,90
+        </div>
+
+        <a href="#" class="btn">
+          Comprar
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="newsletter">
+
+  <h2>
+    RECEBA OFERTAS INSANAS
+  </h2>
+
+  <p>
+    Promoções, cupons e novidades direto no teu email.
+  </p>
+
+  <div style="margin-top:25px;">
+
+    <input type="email" placeholder="Seu melhor email">
+
+    <button>
+      CADASTRAR
+    </button>
+
+  </div>
+
+</section>
+
+<footer>
+
+  © 2026 EXPRESS STORE — TODOS OS DIREITOS RESERVADOS
+
+</footer>
+
+</body>
+</html>
